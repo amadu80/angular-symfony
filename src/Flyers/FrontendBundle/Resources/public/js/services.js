@@ -196,20 +196,20 @@ factory('TokenHandler', [ '$http', '$cookieStore', 'Base64', function($http, $co
     return tokenHandler;
 }]).
 factory('Hello', ['$resource', 'TokenHandler', function($resource, tokenHandler) {
-    var resource = $resource('/angular/app_dev.php/api/hello');
+    var resource = $resource('/app_dev.php/api/hello');
     resource = tokenHandler.wrapActions(resource, ['get']);
     return resource;
 }]).
 factory('Todos', ['$resource', 'TokenHandler', function($resource, tokenHandler){
-    var resource = $resource('/angular/app_dev.php/api/todos', {}, { 
+    var resource = $resource('/app_dev.php/api/todos', {}, {
         query: {method:'GET', params:{}, isArray:true}
     });
     resource = tokenHandler.wrapActions(resource, ['get', 'query']);
     return resource;
 }]).
 factory('Todo', ['$resource', 'TokenHandler', function($resource, tokenHandler){
-    var resource = $resource('/angular/app_dev.php/api/todo', {}, { 
-        update: {method:'PUT'},
+    var resource = $resource('/app_dev.php/api/todo', {}, {
+        update: {method:'PUT'}
     });
     resource = tokenHandler.wrapActions(resource, ['get', 'update']);
     return resource;
