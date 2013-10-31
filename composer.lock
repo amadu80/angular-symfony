@@ -3,8 +3,19 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "fb7c7a79fc3cfeaa7c3d35b9201775aa",
+    "hash": "e6a849e6ac559be27f50875159516cc4",
     "packages": [
+        {
+            "name": "angular-lib",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/angular/angular.js",
+                "reference": "origin/master"
+            },
+            "type": "library",
+            "time": "2013-10-31 00:01:51"
+        },
         {
             "name": "doctrine/annotations",
             "version": "v1.1.1",
@@ -2109,9 +2120,9 @@
 
     ],
     "minimum-stability": "alpha",
-    "stability-flags": [
-
-    ],
+    "stability-flags": {
+        "angular-lib": 20
+    },
     "platform": {
         "php": ">=5.3.3"
     },
